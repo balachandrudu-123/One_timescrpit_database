@@ -1,0 +1,4 @@
+device_id,manufacturing_date,device_model,device_version,device_address_id,firmware_version,manufacturer_name
+PRORITHM01:112:222,11/09/2023,DF45510,2,02:112:223,2.1,DeepFacts
+PRORITHM02:112:222,11/09/2023,DF45511,2,02:112:224,2.1,DeepFacts
+PRORITHM03:112:222,11/09/2023,DF45512,2,02:112:223,2.1,DeepFacts
