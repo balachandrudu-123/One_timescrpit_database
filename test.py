@@ -3,16 +3,17 @@ import mysql.connector
 
 # Database connection details
 db_config = {
-    'host': 'localhost',
-    'user': 'root',
-    'password': 'Balu@424',
-    'database': 'version5'
+    "host": "localhost",
+    "user": "root",
+    "password": "Balu@424",
+    "database": "version6",
 }
 
 # CSV file path
-csv_file_path = r'F:\database\clinics.csv'
+csv_file_path = r"F:\database\client.csv"
 
-table_name = 'clinics'
+table_name = "client_data"
+
 
 def insert_data_into_mysql():
     # Connect to MySQL
@@ -26,9 +27,9 @@ def insert_data_into_mysql():
         # Iterate through rows and insert into MySQL
         for index, row in df.iterrows():
             values = tuple(row)
-            placeholders = ', '.join(['%s'] * len(row))
+            placeholders = ", ".join(["%s"] * len(row))
             query = f"INSERT INTO {table_name} VALUES ({placeholders})"
-            
+
             try:
                 cursor.execute(query, values)
             except mysql.connector.IntegrityError as e:
@@ -46,6 +47,7 @@ def insert_data_into_mysql():
         # Close the cursor and connection
         cursor.close()
         connection.close()
+
 
 result = insert_data_into_mysql()
 print(result)
